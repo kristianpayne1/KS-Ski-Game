@@ -20,6 +20,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // follows player with some lag for that extra smoothness
         float zoomPercentage = (rb.velocity.magnitude / maxSpeed);
         Vector3 tPos =  player.position + (offSet + (cameraZoom * zoomPercentage));
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, tPos, 0.125f);
