@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - PausedText
+  - Ground
   layers:
   - Default
   - TransparentFX
