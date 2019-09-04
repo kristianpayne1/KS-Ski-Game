@@ -26,5 +26,10 @@ public class FollowPlayer : MonoBehaviour
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, tPos, 0.125f);
         transform.position = smoothedPosition;
     }
+
+    public Vector3 getCurrentOffset()
+    {
+        return this.transform.position - player.position;
+    }
 }
 
