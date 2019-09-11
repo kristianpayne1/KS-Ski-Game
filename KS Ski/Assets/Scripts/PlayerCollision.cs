@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public PlayerMovement movement;
-    public Rigidbody rigidbody;
+    public new Rigidbody rigidbody;
 
     private GameObject ski1;    // left ski
     private GameObject ski2;    // right ski

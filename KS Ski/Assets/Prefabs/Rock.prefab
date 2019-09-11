@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3668832768149407909}
   - component: {fileID: 3668832768149407906}
   - component: {fileID: 3668832768149407907}
+  - component: {fileID: -6072936053051588291}
   - component: {fileID: 3668832768149407904}
   m_Layer: 0
   m_Name: Rock
@@ -55,6 +56,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,6 +81,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-6072936053051588291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3668832768149407905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f691b6de344de8e48b6fe32000052c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &3668832768149407904
 SphereCollider:
   m_ObjectHideFlags: 0

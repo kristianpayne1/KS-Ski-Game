@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441595468}
   - component: {fileID: 441595467}
+  - component: {fileID: 441595469}
   m_Layer: 0
   m_Name: WorldGenerator
   m_TagString: Untagged
@@ -151,12 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd5cb298af0f7047a217f67f170944a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldBoundary: {x: 200, y: 0, z: 100}
+  worldBoundary: {x: 100, y: 0, z: 100}
   placeableObjects:
   - {fileID: 3668832768149407905, guid: 6a88498b080151f4bbf1c6a6a3e41213, type: 3}
   - {fileID: 1073738218277899777, guid: 31cbd250476754c4dbc3152b2f4383b5, type: 3}
   - {fileID: 1073738218277899777, guid: 31cbd250476754c4dbc3152b2f4383b5, type: 3}
-  numObjects: 75
+  numObjects: 50
   player: {fileID: 1662489072}
 --- !u!4 &441595468
 Transform:
@@ -172,6 +173,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &441595469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441595466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef810d213d4fac4b83b08d90ff11a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFromPlayer: 50
 --- !u!1 &492606014
 GameObject:
   m_ObjectHideFlags: 0

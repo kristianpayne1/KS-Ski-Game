@@ -7,11 +7,11 @@ public class GameManager : MonoBehaviour
 {
     bool gameEnded = false;
     [SerializeField]
-    private int boundary;
+    private int boundary = 0;
     [SerializeField]
-    private GameObject player;
+    private GameObject player = null;
     [SerializeField]
-    private GameObject camera;
+    private new GameObject camera = null;
     private Transform playerTransform;
 
     void Start()

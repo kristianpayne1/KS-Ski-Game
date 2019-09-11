@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxVelocity = 25;  // used to cap how fast a player can move
     private float sqrMaxVelocity;   // cached square velocity, used because its "quicker"
     public float rotSpeed = 10; // rotation speed
-    public Rigidbody rigidbody;
+    public new Rigidbody rigidbody;
 
     private Camera mainCamera;
 

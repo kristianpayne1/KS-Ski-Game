@@ -8,7 +8,7 @@ public class PlaceObjects : MonoBehaviour
     [SerializeField]
     private Vector3 worldBoundary = new Vector3 (200,0,200);
     [SerializeField]
-    private GameObject[] placeableObjects;
+    private GameObject[] placeableObjects = null;
     [SerializeField]
     private float numObjects = 50;
     public GameObject player;
@@ -27,8 +27,8 @@ public class PlaceObjects : MonoBehaviour
             || player.transform.position.z > distance.z + (worldBoundary.z / 2)
             || player.transform.position.x < -distance.x - (worldBoundary.x / 2))
         {
-            Debug.Log("Generate more objects");
-            distance = player.transform.position;
+            distance = new Vector3(player.transform.position.x, 0, player.transform.position.z + (worldBoundary.z/2));
+            placeObjects();
         }
     }
 
@@ -51,9 +51,9 @@ public class PlaceObjects : MonoBehaviour
     //gets a random point
     private Vector3 RandomPointAboveGround() {
         return new Vector3(
-            Random.Range(player.transform.position.x - worldBoundary.x / 2, player.transform.position.x + worldBoundary.x / 2),
+            Random.Range(distance.x - worldBoundary.x / 2, distance.x + worldBoundary.x / 2),
             player.transform.position.y * 2,
-            Random.Range(player.transform.position.z, player.transform.position.z + worldBoundary.z)
+            Random.Range(distance.z, distance.z + worldBoundary.z)
         );
     }
 
