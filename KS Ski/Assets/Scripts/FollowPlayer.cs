@@ -14,7 +14,7 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         rb = player.GetComponent<Rigidbody>();
-        cameraZoom = new Vector3(0f, offSet.y * 2.5f, offSet.z *2f);
+        cameraZoom = new Vector3(0f, offSet.y * 2.5f, offSet.z *4f);
     }
 
     // Update is called once per frame

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd5cb298af0f7047a217f67f170944a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldBoundary: {x: 100, y: 0, z: 100}
+  worldBoundary: {x: 150, y: 0, z: 75}
   placeableObjects:
   - {fileID: 3668832768149407905, guid: 6a88498b080151f4bbf1c6a6a3e41213, type: 3}
   - {fileID: 1073738218277899777, guid: 31cbd250476754c4dbc3152b2f4383b5, type: 3}
@@ -383,8 +383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1662489076}
-  offSet: {x: 0, y: 12, z: 9}
-  maxSpeed: 50
+  offSet: {x: 0, y: 12, z: 7}
+  maxSpeed: 40
 --- !u!1 &671062283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a388a1e458028064f9eec44e28cf83d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardForce: 1200
+  forwardForce: 1000
   maxVelocity: 25
   rotSpeed: 5
   rigidbody: {fileID: 1662489079}
