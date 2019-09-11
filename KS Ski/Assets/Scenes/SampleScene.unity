@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1662489076}
   offSet: {x: 0, y: 12, z: 7}
-  maxSpeed: 40
+  maxSpeed: 35
 --- !u!1 &671062283
 GameObject:
   m_ObjectHideFlags: 0
