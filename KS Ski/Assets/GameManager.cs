@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("GAME OVER");
             gameEnded = true;
+            camera.GetComponent<CameraShaker>().shouldShake = true;
             StartCoroutine(restartGame());
         }
     }
