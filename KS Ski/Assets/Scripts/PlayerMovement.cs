@@ -9,6 +9,11 @@ public class PlayerMovement : MonoBehaviour
     private float sqrMaxVelocity;   // cached square velocity, used because its "quicker"
     public float rotSpeed = 10; // rotation speed
     public new Rigidbody rigidbody;
+    public float tiltAngle = 3f;
+    public float tiltSpeed = 30.0f;
+
+    public Vector3 playerForce = new Vector3(0,0,0);
+    public int playerDrag = 0;
 
     private Camera mainCamera;
 
@@ -64,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
             // for debugging only
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.red);
-
+            
             // gets position where ray hit
             Vector3 target = new Vector3(pointToLook.x, transform.position.y, pointToLook.z);
 
@@ -83,37 +88,43 @@ public class PlayerMovement : MonoBehaviour
             // facing directly downhill
             if(downhillPower >= 0.9)
             {
-                rigidbody.AddForce(transform.forward * forwardForce * Time.deltaTime);
+               playerForce = transform.forward * forwardForce * Time.deltaTime;
             }
             else if(downhillPower < 0.9 && downhillPower >= 0.7)    //facing bottom left/right of screen
             {
-                rigidbody.drag = 1;
-                rigidbody.AddForce(transform.forward * (forwardForce * 0.8f) * Time.deltaTime);
+                playerDrag = 1;
+                playerForce = (transform.forward * (forwardForce * 0.8f) * Time.deltaTime);
             }else if(downhillPower < 0.7 && downhillPower >= 0.5)   //facing mostly right/left-ish
             {
-                rigidbody.drag = 2;
-                rigidbody.AddForce(transform.forward * (forwardForce * 0.7f) * Time.deltaTime);
-            }else if(downhillPower < 0.5 && downhillPower >= 0.3)   // nearly facing completely left/right
+                playerDrag = 2;
+                playerForce = (transform.forward * (forwardForce * 0.7f) * Time.deltaTime);
+            }else if(downhillPower < 0.5 && downhillPower >= 0.2)   // nearly facing completely left/right
             {
-                rigidbody.drag = 3;
-                rigidbody.AddForce(transform.forward * (forwardForce * 0.6f) * Time.deltaTime);
+                playerDrag = 3;
+                playerForce = (transform.forward * (forwardForce * 0.6f) * Time.deltaTime);
+            }else{
+                playerDrag = 1;
+                playerForce = new Vector3(0,0,0);
             }
         }else{  //for backwards movement (a little weird)
             if(downhillPower <= -0.9)
             {
-                rigidbody.AddForce(transform.forward * -forwardForce * Time.deltaTime);
+                playerForce = (transform.forward * -forwardForce * Time.deltaTime);
             }else if(downhillPower > -0.9 && downhillPower <= -0.7)
             {
-                rigidbody.drag = 1;
-                rigidbody.AddForce(transform.forward * (-forwardForce * 0.8f) * Time.deltaTime);
+                playerDrag = 1;
+               playerForce = (transform.forward * (-forwardForce * 0.8f) * Time.deltaTime);
             }else if(downhillPower > -0.7 && downhillPower <= -0.5)
             {
-                rigidbody.drag = 2;
-                rigidbody.AddForce(transform.forward * (-forwardForce * 0.7f) * Time.deltaTime);
-            }else if(downhillPower > -0.5 && downhillPower <= -0.3)
+                playerDrag = 2;
+                playerForce = (transform.forward * (-forwardForce * 0.7f) * Time.deltaTime);
+            }else if(downhillPower > -0.5 && downhillPower <= -0.2)
             {
-                rigidbody.drag = 3;
-                rigidbody.AddForce(transform.forward * (-forwardForce * 0.6f) * Time.deltaTime);
+                playerDrag = 3;
+                playerForce = (transform.forward * (-forwardForce * 0.6f) * Time.deltaTime);
+            }else{
+                playerDrag = 1;
+                playerForce = new Vector3(0,0,0);
             }
         }
     }

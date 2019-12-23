@@ -20,17 +20,17 @@ public class PlaceObjects : MonoBehaviour
         placeObjects();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(player.transform.position.x > distance.x + (worldBoundary.x / 2) 
-            || player.transform.position.z > distance.z + (worldBoundary.z / 2)
-            || player.transform.position.x < -distance.x - (worldBoundary.x / 2))
-        {
-            distance = new Vector3(player.transform.position.x, 0, player.transform.position.z + (worldBoundary.z/2));
-            placeObjects();
-        }
-    }
+    // // Update is called once per frame
+    // void Update()
+    // {
+    //     if(player.transform.position.x > distance.x + (worldBoundary.x / 2) 
+    //         || player.transform.position.z > distance.z + (worldBoundary.z / 2)
+    //         || player.transform.position.x < -distance.x - (worldBoundary.x / 2))
+    //     {
+    //         distance = new Vector3(player.transform.position.x, 0, player.transform.position.z + (worldBoundary.z/2));
+    //         placeObjects();
+    //     }
+    // }
 
     //helper methods below
     void placeObjects()
@@ -43,7 +43,7 @@ public class PlaceObjects : MonoBehaviour
             //makes sure object is above ground
             if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.collider.CompareTag("Ground")) 
             {
-                Instantiate(placeableObjects[prefabType], new Vector3(startPoint.x, hit.point.y, startPoint.z), Quaternion.identity);
+                Instantiate(placeableObjects[prefabType], new Vector3(startPoint.x, hit.point.y + 0.8f, startPoint.z), Quaternion.identity);
             }
         }
     }

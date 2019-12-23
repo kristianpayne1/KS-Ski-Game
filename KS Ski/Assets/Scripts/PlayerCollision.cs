@@ -25,9 +25,9 @@ public class PlayerCollision : MonoBehaviour
         // if collider was a obstacle
         if (other.collider.tag == "Obstacle")
         {
-            Debug.Log(speed);
+           // Debug.Log(speed);
             // if player was travelling fast enough to bail
-            if(speed > 5f)
+            if(speed > 2f)
             {
                 Handheld.Vibrate();
                 // die b*tch
@@ -56,6 +56,8 @@ public class PlayerCollision : MonoBehaviour
     {
         Debug.Log("Bailed!!");
         dropSkis();
+        movement.playerDrag = 1;
+        movement.playerForce = new Vector3(0,0,0);
         movement.enabled = false;
         FindObjectOfType<GameManager>().endGame();
     }
