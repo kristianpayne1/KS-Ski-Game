@@ -26,7 +26,7 @@ public class NearMiss : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if(other.GetComponent<Collider>().tag == "Player" && hasBeenMissed == false)
+        if(other.GetComponent<Collider>().tag == "Player" && hasBeenMissed == false && FindObjectOfType<GameManager>().gameEnded == false)
         {
             Score.points += 10;
             Debug.Log("Near miss!");
