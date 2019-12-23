@@ -8,6 +8,7 @@ TagManager:
   - PausedText
   - Ground
   - Boundry
+  - Score
   layers:
   - Default
   - TransparentFX

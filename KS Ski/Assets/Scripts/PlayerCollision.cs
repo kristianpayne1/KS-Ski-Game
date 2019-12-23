@@ -27,7 +27,7 @@ public class PlayerCollision : MonoBehaviour
         {
            // Debug.Log(speed);
             // if player was travelling fast enough to bail
-            if(speed > 2f)
+            if(speed > 1f)
             {
                 Handheld.Vibrate();
                 // die b*tch
