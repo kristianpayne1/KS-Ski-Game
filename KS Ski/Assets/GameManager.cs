@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerTransform = player.transform;
+        Application.targetFrameRate = 60;
     }
 
     public void endGame()

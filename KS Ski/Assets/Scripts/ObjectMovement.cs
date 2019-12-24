@@ -17,7 +17,7 @@ public class ObjectMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         rigidbody.AddForce(-playerMov.playerForce);
         rigidbody.drag = playerMov.playerDrag;
