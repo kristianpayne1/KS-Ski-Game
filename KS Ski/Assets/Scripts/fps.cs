@@ -10,6 +10,6 @@ public class fps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fpsCounter.text = (1.0f / Time.deltaTime).ToString("0");
+        fpsCounter.text = "FPS: " + (1.0f / Time.deltaTime).ToString("0");
     }
 }

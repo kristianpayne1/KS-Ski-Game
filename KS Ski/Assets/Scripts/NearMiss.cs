@@ -3,11 +3,13 @@ using System.Collections;
 
 public class NearMiss : MonoBehaviour
 {
-    private GameObject score;
+    private GameObject Points;
+    private Points pointsScript;
     bool hasBeenMissed = false;
 
     void Start() {
-        score = GameObject.FindWithTag("Score");
+        Points = GameObject.FindWithTag("Points");
+        pointsScript = Points.GetComponent<Points>();
     }
 
     void Update()
@@ -28,7 +30,7 @@ public class NearMiss : MonoBehaviour
     {
         if(other.GetComponent<Collider>().tag == "Player" && hasBeenMissed == false && FindObjectOfType<GameManager>().gameEnded == false)
         {
-            Score.points += 10;
+            pointsScript.gainPoints(10);
             Debug.Log("Near miss!");
             // avoids player gaining double near misses
             hasBeenMissed = true;

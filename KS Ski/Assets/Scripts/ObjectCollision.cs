@@ -19,7 +19,7 @@ public class ObjectCollision : MonoBehaviour
         }else if(transform.position.x <= -50)
         {
             transform.position = new Vector3(-transform.position.x - 2, transform.position.y, transform.position.z);
-        }else if (transform.position.z <= -30)
+        }else if (transform.position.z <= -40)
         {
             bool foundGround = false;
             while(foundGround == false)
