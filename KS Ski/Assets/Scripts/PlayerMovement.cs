@@ -15,12 +15,15 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 playerForce = new Vector3(0,0,0);
     public int playerDrag = 0;
 
+    public bool isMoving;
+
     private Camera mainCamera;
 
     void Start()
     {
         mainCamera = FindObjectOfType<Camera>();    // get the camera
         sqrMaxVelocity = maxVelocity * maxVelocity;     // calculate sqr velocity, only done once
+        isMoving = false;
     }
 
     void FixedUpdate()
@@ -100,9 +103,11 @@ public class PlayerMovement : MonoBehaviour
                 playerForce = (transform.forward * (forwardForce * 0.7f) * Time.deltaTime);
             }else if(downhillPower < 0.5 && downhillPower >= 0.2)   // nearly facing completely left/right
             {
+                isMoving = true;
                 playerDrag = 3;
                 playerForce = (transform.forward * (forwardForce * 0.6f) * Time.deltaTime);
             }else{
+                isMoving = false;
                 playerDrag = 1;
                 playerForce = new Vector3(0,0,0);
             }
@@ -120,9 +125,11 @@ public class PlayerMovement : MonoBehaviour
                 playerForce = (transform.forward * (-forwardForce * 0.7f) * Time.deltaTime);
             }else if(downhillPower > -0.5 && downhillPower <= -0.2)
             {
+                isMoving = true;
                 playerDrag = 3;
                 playerForce = (transform.forward * (-forwardForce * 0.6f) * Time.deltaTime);
             }else{
+                isMoving = false;
                 playerDrag = 1;
                 playerForce = new Vector3(0,0,0);
             }
